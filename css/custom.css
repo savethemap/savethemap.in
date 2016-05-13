@@ -257,3 +257,17 @@ html, body {
   text-align: center;
   padding-bottom: 10px;
 }
+
+.gmail {
+  background-color: #c71610 !important;
+  border-color: #c71610 !important;
+}
+
+.yahoo {
+  background-color: #7B0099 !important;
+  border-color: #7B0099 !important;
+}
+
+.other {
+
+}
