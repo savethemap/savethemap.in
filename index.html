@@ -78,7 +78,7 @@ Thank you.
         </textarea>
         <div class="row" style="padding-bottom: 1rem;">
           <div class="twelve columns">
-            <p style="text-align: center;">Click on the link below to email the Ministry of Home Affairs<br><small>(We BCC ourselves so we can keep count of how many emails have been sent)</small></p>
+            <p style="text-align: center;" class="desktop-only">Click on the link below to email the Ministry of Home Affairs<br><small>(We BCC ourselves so we can keep count of how many emails have been sent)</small></p>
           </div>
         </div>
         <div class="row" style="border-top: none; padding: 0px;">
@@ -188,6 +188,7 @@ Thank you.
       $("#message").click(function() { selectTextById('message') } );
       $('#send-anchor-mobile').hide();
       if(isMobile) {
+        $('.desktop-only').hide();
         $('#send-anchor-gmail, #send-anchor-yahoo, #send-anchor-other').hide();
         $('#send-anchor-mobile').show();
 
