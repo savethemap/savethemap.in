@@ -77,11 +77,11 @@ This current draft will dissuade a strong ecosystem of innovation. Please recons
 Thank you.
         </textarea>
         <div class="row" style="padding-bottom: 1rem;">
-          <div class="two columns"><p></p></div>
-          <div class="eight columns">
-            <p>(Copy (Ctrl+C) the above text, click on the link below and paste it in the body of the email)</p>
+          <div class="three columns"><p></p></div>
+          <div class="six columns">
+            <p>(Click on the link below to email the Ministry of Home Affairs)</p>
           </div>
-          <div class="two columns"><p></p></div>
+          <div class="three columns"><p></p></div>
         </div>
         <div class="row" style="border-top: none; padding: 0px;">
           <a target="_blank" id="send-anchor-gmail" class="button button-primary four columns gmail">Send (via Gmail)</a>
@@ -198,14 +198,14 @@ Thank you.
         });
       }
       else {
-        $("#send-anchor-other").attr("href", "mailto:"+encodeURIComponent(toAddress)+"?subject="+encodeURIComponent(subject)+"&bcc="+encodeURIComponent(bccAddress));
+        $("#send-anchor-other").attr("href", "mailto:"+encodeURIComponent(toAddress)+"?subject="+encodeURIComponent(subject)+"&bcc="+encodeURIComponent(bccAddress)+"&body="+encodedBody);
         if(IEMobile) {
           $('#send-anchor-gmail, #send-anchor-yahoo').hide();
           $('#send-anchor-other .button').text("Send Email");
         }
         else {
-          $("#send-anchor-gmail").attr("href", "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to="+encodeURIComponent(toAddress)+"&bcc="+encodeURIComponent(bccAddress)+"&su="+encodeURIComponent(subject));
-          $("#send-anchor-yahoo").attr("href", "http://compose.mail.yahoo.com/?Subject="+encodeURIComponent(subject)+"&To="+encodeURIComponent(toAddress)+"&Bcc="+encodeURIComponent(bccAddress));
+          $("#send-anchor-gmail").attr("href", "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to="+encodeURIComponent(toAddress)+"&bcc="+encodeURIComponent(bccAddress)+"&su="+encodeURIComponent(subject)+"&body="+encodedBody);
+          $("#send-anchor-yahoo").attr("href", "http://compose.mail.yahoo.com/?Subject="+encodeURIComponent(subject)+"&To="+encodeURIComponent(toAddress)+"&Bcc="+encodeURIComponent(bccAddress)+"&Body="+encodedBody);
         }
       }
     })
