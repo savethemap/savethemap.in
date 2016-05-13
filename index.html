@@ -22,6 +22,8 @@
   <link rel="stylesheet" type="text/css" href="css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials-theme-flat.css" />
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -56,7 +58,7 @@
             <h4>Response to the Geospatial Information Regulation Bill, 2016</h4>
             <p>On May 4th, 2016 the Ministry of Home Affairs published a bill that controls the acquisition, dissemination, publication and distribution of geospatial information in and outside India.</p>
             <p>It has serious implications for individuals and businesses who use maps for service delivery in India. The bill is inviting responses until June 4, 2016.</p>
-            <button id="send-anchor-mobile" class="button button-primary twelve columns">Email the Ministry of Home Affairs</button>
+            <button id="send-anchor-mobile" class="button button-primary twelve columns" style="display:none;">Email the Ministry of Home Affairs</button>
           </div>
         </div>
         <h5>Response</h5>
@@ -139,6 +141,10 @@ Thank you.
       <!-- Page Footer Layout
            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
       <div class="container">
+        <div id="share" class="row" style="text-align: center;">
+          <h6 class="docs-header">Show your support</h6>
+          <div id="jsSocials"></div>
+        </div>
         <footer id="footer" class="twelve columns" style="font-size: 10px">
           <a href="https://github.com/savethemap/savethemap.in" style="color:black;" target="_blank"><i class="fa fa-github"></i><br />code</a>
         </footer>
@@ -148,7 +154,8 @@ Thank you.
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials.min.js"></script>
   <script>
   function pickOne(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -169,6 +176,7 @@ Thank you.
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent) && !IEMobile;
   function sendEmailMobile() {
     window.location.href = "mailto:"+ encodeURIComponent(toAddress) +"?subject="+encodeURIComponent(subject)+"&bcc="+encodeURIComponent(bccAddress)+"&body="+encodedBody;
+    window.location.hash = '#share';
   }
   function selectTextById(element) {
     var doc = document, text = doc.getElementById(element), range, selection;    
@@ -196,6 +204,9 @@ Thank you.
         $('#send-anchor-mobile').click(function() {
           sendEmailMobile();
         });
+        $('#send-anchor-gmail, #send-anchor-yahoo, #send-anchor-other').click(function() {
+          window.location.hash = '#share';
+        });
       }
       else {
         $("#send-anchor-other").attr("href", "mailto:"+encodeURIComponent(toAddress)+"?subject="+encodeURIComponent(subject)+"&bcc="+encodeURIComponent(bccAddress)+"&body="+encodedBody);
@@ -208,8 +219,16 @@ Thank you.
           $("#send-anchor-yahoo").attr("href", "http://compose.mail.yahoo.com/?Subject="+encodeURIComponent(subject)+"&To="+encodeURIComponent(toAddress)+"&Bcc="+encodeURIComponent(bccAddress)+"&Body="+encodedBody);
         }
       }
-    })
-  ;
+       $("#jsSocials").jsSocials({
+          url: "http://savethemap.in",
+          text: "I just sent an email to help #SaveTheMap, you too can.",
+          showCount: "inside",
+          showLabel: false,
+          shareIn: "popup",
+          shares: ["twitter", "facebook", "whatsapp", "googleplus"]
+      });
+    });
+
   </script>
 </body>
 </html>
