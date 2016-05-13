@@ -170,12 +170,20 @@ Thank you.
       pickOne(["the regulation of", "the regulation on"])+" "+
       pickOne(["Geospatial Information", "Geospatial data", "map data"]);
 
-
-  var encodedBody="I+do+not+support+the+current+draft+of+the+Geospatial+Information+Regulation+Bill+2016+for+the+following+reasons%3A%0D%0A%0D%0AUnder+this+current+draft%2C+without+a+license+and+vetting+of+data%2C+I+will+not+be+able+to+do+many+things%2C+which+I+do+in+my+day+to+day+life%2C+such+as%3A%0D%0A%0D%0AI+will+not+be+able+to+geotag+photos+that+I+take%2C+and+share+them+with+my+friends.%0D%0AI+will+not+be+able+to+geotag+my+social+media+posts.%0D%0AI+will+not+be+able+to+record+my+daily+running%2C+cycling%2C+walking+or+driving+activity+with+smartphone+apps.%0D%0AI+will+not+be+able+to+share+my+location+with+my+friends+and+others+via+smartphone+apps+like+Whatsapp%2C+food+delivery+apps%2C+transport+apps+etc.%0D%0AI+will+not+be+able+to+use+safety+apps+to+share+my+location%2C+which+is+a+dangerous+thing%2C+given+the+issue+of+child+%26+women%27s+safety.%0D%0AI+will+not+be+able+to+have+a+simple+diagram+showing+the+location+on+my+sister%27s+wedding+card.%0D%0A%0D%0AThis+current+draft+will+dissuade+a+strong+ecosystem+of+innovation.+Please+reconsider+this+current+draft+in+favour+of+a+regulation+policy+that+will+encourage+all+Indians+who+need+and+use+geospatial+data+in+everyday+lives+and+who+work+every+day+to+create+businesses+that+serve+India.%0D%0A%0D%0AThank+you.%0D%0A";
+  var body = document.getElementById("message").value
+  var encodedBody=encodeURIComponent(body);
   var IEMobile = /IEMobile/i.test(navigator.userAgent);
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent) && !IEMobile;
   function sendEmailMobile() {
-    window.location.href = "mailto:"+ encodeURIComponent(toAddress) +"?subject="+encodeURIComponent(subject)+"&bcc="+encodeURIComponent(bccAddress)+"&body="+encodedBody;
+    var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+    if(iOS) {
+        /* I'm guessing encodeURIComponent works differently with line breaks on iOS? */
+        var iOSBody = body.replace("\n","%0D%0A");
+        window.location.href = "mailto:"+ encodeURIComponent(toAddress) +"?subject="+encodeURIComponent(subject)+"&bcc="+encodeURIComponent(bccAddress)+"&body="+encodeURIComponent(iOSBody);
+    }
+    else {
+      window.location.href = "mailto:"+ encodeURIComponent(toAddress) +"?subject="+encodeURIComponent(subject)+"&bcc="+encodeURIComponent(bccAddress)+"&body="+encodedBody;
+    }
     window.location.hash = '#share';
   }
   function selectTextById(element) {
