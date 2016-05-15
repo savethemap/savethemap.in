@@ -280,3 +280,60 @@ html, body {
 .other {
 
 }
+
+/* Helpers */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.no-bullets {
+  list-style-type: none;
+}
+@media (min-width: 400px) {
+  ul.three-col-list > li {
+    float: left;
+    width: 49%;
+    padding-right: 1%;
+  }
+}
+@media (min-width: 750px) {
+  ul.three-col-list > li {
+    width: 30%;
+  }
+}
+
+/* People */
+.person h3 {
+  color: #222;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+}
+.person p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.person ul {
+  margin: 0;
+}
+.person ul:before,
+.person ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.person ul:after {
+  clear: both;
+}
+.person ul li {
+  float: left;
+  text-transform: lowercase;
+  font-size: 1.1rem;
+}
+.person ul li + li:before {
+  content: '|';
+  color: #ccc;
+  margin: 0 .4rem 0 .3rem;
+}
