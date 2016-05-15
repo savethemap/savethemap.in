@@ -224,6 +224,15 @@
 h1, h2, h3, h4, h5, h6 {
   color: #a07fbf;
 }
+
+h1.logo {
+  background: url("images/logo.png");
+}
+
+h1.logo span {
+  display: none;
+}
+
 .row {
   border-top: 1px solid #eee;
   padding: 4rem 0;
