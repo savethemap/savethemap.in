@@ -222,7 +222,7 @@
     border-bottom-color: #33C3F0; }
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #a07fbf;
+  color: #7932BB;
 }
 .row {
   border-top: 1px solid #eee;
@@ -230,11 +230,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 a {
-  color: #7d3abd;
+  color: #7932BB;
   text-decoration: none;
 }
 a:hover {
-  color: #7d3abd;
+  color: #7932BB;
   text-decoration: underline;
 }
 html, body {
