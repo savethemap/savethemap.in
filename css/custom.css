@@ -271,3 +271,16 @@ html, body {
 .other {
 
 }
+
+.button-purple {
+  color: #fff;
+  background-color: #7932bb;
+  border-color: #7932bb;
+}
+
+
+.button-purple:hover {
+  color: #fff;
+  background-color: #650eb7;
+  border-color: #650eb7;
+}
