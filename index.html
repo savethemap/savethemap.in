@@ -32,17 +32,40 @@
 </head>
 <body>
 <div class="container">
-  <div class="row">
-    <div class="six columns" style="margin-top: 6%">
+  <header class="row no-border">
+    <div class="logo-container columns">
       <img class="u-max-full-width" src="images/logo.png" alt="Save The Map: Response to the Geospatial Information Regulation Bill, 2016">
     </div>
-    <div class="six columns" style="margin-top: 10%">
-      <h4>Response to the Geospatial Information Regulation Bill, 2016</h4>
-      <p>On May 4th, 2016 the Ministry of Home Affairs published a bill that controls the acquisition, dissemination, publication and distribution of geospatial information in and outside India.</p>
-      <p>It has serious implications for individuals and businesses who use maps for service delivery in India. The bill is inviting responses until June 4, 2016.</p>
-      <button id="send-anchor-mobile" class="button button-purple twelve columns" style="display:none;">Email the Ministry of Home Affairs</button>
-      <p><a class="button" href="http://mha.nic.in/sites/upload_files/mha/files/GeospatialBill_05052016_eve.pdf" target="_blank">Read the Bill</a> <a class="button button-purple desktop-only" href="#Response">Email the Ministry of Home Affairs</a> <a class="button" href="#FAQ">FAQ</a> <a class="button" href="#STM">What is SavetheMap?</a> <a class="button" href="#Writings">Our Writings</a></p>
-      </div>
+    <nav class="menu-container columns">
+      <ul class="no-bullets docs-header">
+        <li><a href="#STM">What&nbsp;is&nbsp;Save&nbsp;The&nbsp;Map?</a></li>
+        <li><a href="http://mha.nic.in/sites/upload_files/mha/files/GeospatialBill_05052016_eve.pdf" target="_blank">Read&nbsp;the&nbsp;Bill</a></li>
+        <li><a href="#Writings">Our&nbsp;Writings</a></li>
+        <li><a href="#FAQ">FAQs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="row no-border no-padding-top">
+    <div class="five columns">
+      <p>On May 4th, 2016 the Ministry of Home Affairs published a bill that controls the acquisition, dissemination, publication and distribution of geospatial information in and outside India. It has serious implications for individuals and businesses who use maps for service delivery in India.</p>
+
+      <p>This bill would require a 3 month vetting and approval process for any use of mappping. When you “share your location” on WhatsApp with your friend, you’re creating and disseminating geospatial information. This bill can make your daily use of maps illegal.</p>
+
+      <p>Let them know you want to keep using maps in real time.</p>
+
+      <p>The bill is inviting responses until June 4, 2016.</p>
+    </div>
+    <div class="seven columns">
+      <h5>Send an email to MHA to tell them you don’t support this draft</h5>
+      <p><a id="send-anchor-mobile" class="button button-purple" href="#Response">Email the Ministry of Home Affairs</a></p>
+
+      <h6>I work at a startup or a business that uses mapping data in India. How does it affect me?</h6>
+      <p><a class="button" href="#FAQ-Businesses">Read the FAQs for Businesses</a></p>
+
+      <h6>I don’t do any mapping. How does it affect me?</h6>
+      <p><a class="button" href="#FAQ-Citizens">Read the FAQs for Citizen</a></p>
+
+    </div>
   </div>
   <div class="row">
     <div class="six columns" style="margin-top: 2%">
@@ -427,14 +450,14 @@ Thank you,
   $(document)
     .ready(function() {
       $("#message").click(function() { selectTextById('message') } );
-      $('#send-anchor-mobile').hide();
       if(isMobile) {
         $('.desktop-only').hide();
         $('#send-anchor-gmail, #send-anchor-yahoo, #send-anchor-other').hide();
         $('#send-anchor-mobile').show();
 
-        $('#send-anchor-mobile').click(function() {
+        $('#send-anchor-mobile').click(function(e) {
           sendEmailMobile();
+          e.preventDefault();
         });
         $('#send-anchor-gmail, #send-anchor-yahoo, #send-anchor-other').click(function() {
           window.location.hash = '#share';

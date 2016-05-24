@@ -238,6 +238,9 @@ h1.logo span {
   padding: 4rem 0;
   margin-bottom: 0;
 }
+.row.no-border {
+  border-top: none;
+}
 a {
   color: #7932BB;
   text-decoration: none;
@@ -293,6 +296,25 @@ html, body {
   border-color: #650eb7;
 }
 
+.menu-container {
+  margin-top: 2%;
+  text-align: center;
+}
+@media (min-width: 550px) {
+  .logo-container {
+    width: 30%;
+  }
+  .menu-container {
+    width: 66%;
+    text-align: right;
+  }
+}
+@media (min-width: 750px) {
+  .menu-container {
+    margin-top: 3%;
+  }
+}
+
 /* Helpers */
 .clearfix:before,
 .clearfix:after {
@@ -302,8 +324,14 @@ html, body {
 .clearfix:after {
   clear: both;
 }
+.all-caps {
+  text-transform: uppercase;
+}
 .no-bullets {
   list-style-type: none;
+}
+.no-padding-top {
+  padding-top: 0;
 }
 @media (min-width: 400px) {
   ul.three-col-list > li {
