@@ -222,7 +222,7 @@
     border-bottom-color: #33C3F0; }
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #a07fbf;
+  color: #7932BB;
 }
 
 h1.logo {
@@ -239,11 +239,11 @@ h1.logo span {
   margin-bottom: 0;
 }
 a {
-  color: #7d3abd;
+  color: #7932BB;
   text-decoration: none;
 }
 a:hover {
-  color: #7d3abd;
+  color: #7932BB;
   text-decoration: underline;
 }
 html, body {
@@ -279,6 +279,18 @@ html, body {
 
 .other {
 
+}
+
+.button-purple {
+  color: #fff;
+  background-color: #7932bb;
+  border-color: #7932bb;
+}
+
+.button-purple:hover {
+  color: #fff;
+  background-color: #650eb7;
+  border-color: #650eb7;
 }
 
 /* Helpers */
