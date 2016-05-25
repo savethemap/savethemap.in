@@ -349,6 +349,12 @@ html, body {
   margin-bottom: 0.5rem;
 }
 
+@media (min-width: 550px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
 /* People */
 .person h3 {
   color: #222;

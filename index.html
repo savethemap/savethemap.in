@@ -42,7 +42,7 @@
         <li><a href="http://mha.nic.in/sites/upload_files/mha/files/GeospatialBill_05052016_eve.pdf" target="_blank">Read&nbsp;the&nbsp;Bill</a></li>
         <li><a href="#Writings">Testimonials</a></li>
         <li><a href="#FAQ">FAQs</a></li>
-        <li><a class="send-anchor-mobile button button-purple mobile-only" href="#Response" style="display: none;">Email the Ministry of Home&nbsp;Affairs</a></li>
+        <li><a class="send-anchor-mobile button button-purple mobile-only" href="#Response">Email the Ministry of Home&nbsp;Affairs</a></li>
       </ul>
     </nav>
   </header>
@@ -685,7 +685,6 @@ Thank you,
     .ready(function() {
       $("#message").click(function() { selectTextById('message') } );
       if(isMobile) {
-        $('.mobile-only').show();
         $('.desktop-only').hide();
         $('#send-anchor-gmail, #send-anchor-yahoo, #send-anchor-other').hide();
 
