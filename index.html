@@ -42,6 +42,7 @@
         <li><a href="http://mha.nic.in/sites/upload_files/mha/files/GeospatialBill_05052016_eve.pdf" target="_blank">Read&nbsp;the&nbsp;Bill</a></li>
         <li><a href="#Writings">Testimonials</a></li>
         <li><a href="#FAQ">FAQs</a></li>
+        <li><a class="send-anchor-mobile button button-purple mobile-only" href="#Response" style="display: none;">Email the Ministry of Home&nbsp;Affairs</a></li>
       </ul>
     </nav>
   </header>
@@ -55,7 +56,7 @@
     </div>
     <div class="seven columns">
       <h5>Send an email to MHA to tell them you don’t support this draft</h5>
-      <p><a id="send-anchor-mobile" class="button button-purple" href="#Response">Email the Ministry of Home Affairs</a></p>
+      <p><a class="send-anchor-mobile button button-purple" href="#Response">Email the Ministry of Home&nbsp;Affairs</a></p>
 
       <h6>I work at a startup or a business that uses mapping data in India. How does it affect me?</h6>
       <p><a class="button" href="#FAQ-Businesses">Read the FAQs for Businesses</a></p>
@@ -187,7 +188,7 @@ Thank you,
       <p>The first and most important step is to reach out to the Joint Secretary (Internal Security-I), Ministry of Home Affairs via email at jsis@nic.in before June 2<sup>nd</sup> with comments and feedback. You can optionally use <a href="#Response">our email template provided above</a>.</p>
       <p>Secondly, please spread awareness about this bill in your network, and ask all to send a response to this bill, explaining why this is a bad idea, and why it’s a mistake for the MHA to even consider this bill in its current state.</p>
 
-      <p style="text-align: center;"><a class="button button-purple" href="#Response">Email the Ministry of Home Affairs</a></p>
+      <p style="text-align: center;"><a class="button button-purple" href="#Response">Email the Ministry of Home&nbsp;Affairs</a></p>
 
     
     <h5 id="FAQ-Businesses">Businesses</h5>
@@ -205,7 +206,7 @@ Thank you,
       <p>The first and most important step is to reach out to the Joint Secretary (Internal Security-I), Ministry of Home Affairs via email at jsis@nic.in before June 2<sup>nd</sup> with comments and feedback. You can optionally use <a href="#Response">our email template provided above</a>.</p>
       <p>Secondly, please spread awareness about this bill in your network, and ask all to send a response to this bill, explaining why this is a bad idea, and why it’s a mistake for the MHA to even consider this bill in its current state.</p>
     
-      <p style="text-align: center;"><a class="button button-purple" href="#Response">Email the Ministry of Home Affairs</a></p>
+      <p style="text-align: center;"><a class="button button-purple" href="#Response">Email the Ministry of Home&nbsp;Affairs</a></p>
   </div>
 
   <div class="row">
@@ -692,11 +693,11 @@ Thank you,
     .ready(function() {
       $("#message").click(function() { selectTextById('message') } );
       if(isMobile) {
+        $('.mobile-only').show();
         $('.desktop-only').hide();
         $('#send-anchor-gmail, #send-anchor-yahoo, #send-anchor-other').hide();
-        $('#send-anchor-mobile').show();
 
-        $('#send-anchor-mobile').click(function(e) {
+        $('.send-anchor-mobile').click(function(e) {
           sendEmailMobile();
           e.preventDefault();
         });
