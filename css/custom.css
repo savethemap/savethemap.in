@@ -345,6 +345,9 @@ html, body {
     width: 30%;
   }
 }
+.margin-bottom-half {
+  margin-bottom: 0.5rem;
+}
 
 /* People */
 .person h3 {
