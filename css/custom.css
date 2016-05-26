@@ -224,10 +224,22 @@
 h1, h2, h3, h4, h5, h6 {
   color: #7932BB;
 }
+
+h1.logo {
+  background: url("images/logo.png");
+}
+
+h1.logo span {
+  display: none;
+}
+
 .row {
   border-top: 1px solid #eee;
   padding: 4rem 0;
   margin-bottom: 0;
+}
+.row.no-border {
+  border-top: none;
 }
 a {
   color: #7932BB;
@@ -278,9 +290,98 @@ html, body {
   border-color: #7932bb;
 }
 
-
 .button-purple:hover {
   color: #fff;
   background-color: #650eb7;
   border-color: #650eb7;
+}
+
+.menu-container {
+  margin-top: 2%;
+  text-align: center;
+}
+@media (min-width: 550px) {
+  .logo-container {
+    width: 30%;
+  }
+  .menu-container {
+    width: 66%;
+    text-align: right;
+  }
+}
+@media (min-width: 750px) {
+  .menu-container {
+    margin-top: 3%;
+  }
+}
+
+/* Helpers */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.all-caps {
+  text-transform: uppercase;
+}
+.no-bullets {
+  list-style-type: none;
+}
+.no-padding-top {
+  padding-top: 0;
+}
+ul.three-col-list > li {
+  float: left;
+  width: 49%;
+  padding-right: 1%;
+}
+@media (min-width: 750px) {
+  ul.three-col-list > li {
+    width: 30%;
+  }
+}
+.margin-bottom-half {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 550px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* People */
+.person h3 {
+  color: #222;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.person p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.person ul {
+  margin: 0;
+}
+.person ul:before,
+.person ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.person ul:after {
+  clear: both;
+}
+.person ul li {
+  float: left;
+  text-transform: lowercase;
+  font-size: 1.1rem;
+}
+.person ul li + li:before {
+  content: '|';
+  color: #ccc;
+  margin: 0 .4rem 0 .3rem;
 }
